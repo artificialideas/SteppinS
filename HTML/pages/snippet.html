@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>SteppinS | Java program to count  occurrences of a word in string</title>
+</head>
+<body>
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light"><div class="container-md">
+            <div class="container-fluid">
+                <a class="logo" href="#" title="Home" aria-label="Logo">SteppinS</a>
+                <a class="visually-hidden-focusable skip-navigation hidden" href="#content">Skip to main content</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Main menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- START small search -->
+                    <form id="main-search" action="" method=""><div>
+                        <label for="search" class="hidden">Search</label>
+                        <input type="search" id="search" placeholder="search"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#626262" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </div></form>
+                    <!-- END small search -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link important" href="#" title="Sign in">Sign in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" title="Log in">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div></nav> 
+    </header>
+    <main id="main" class="container top40">
+        <header class="page-title">
+            <h1>Java program to count  occurrences of a word in string</h1>
+            <p class="page-info">
+                <a class="post-author" href="#" title="Author name">Author name</a>
+                <span class="post-date">01/01/2021</span>
+                <span class="user-fav"><i class="bi bi-heart-fill"></i> 100</span>
+            </p>
+        </header>
+        <!-- START snippet full content -->
+        <div id="content">
+            <!-- START code block -->
+            <div class="full-code">
+                <h2>Code</h2>
+                <p class="user-actions">
+                    <a href="#" title="Copy to clipboard"><i class="bi bi-clipboard"></i></a> <!-- When copied, change to: <span class="active"><i class="bi bi-clipboard-check"></i></span> -->
+                    <a href="#" title="Add to favorites"><i class="bi bi-heart-fill"></i></a>
+                </p>
+                <pre>
+<code>public class Example {
+    public static void main(String args[]) {
+        String string = "Spring is beautiful but so is winter";
+        String word = "is";
+        String temp[] = string.split(" ");
+        int count = 0;
+
+        for (int i = 0; i < temp.length; i++) {
+            if (word.equals(temp[i]))
+                count++;
+        }
+
+        System.out.println("The string is: " + string);
+        System.out.println("The word " + word + " occurs " + count + " times in the above string");
+    }
+}</code>
+                </pre>
+                <ul class="list-maintags">
+                    <li><a class="btn-tag" href="#" title="Java">Java</a></li>
+                    <li><a class="btn-tag" href="#" title="HTML">HTML</a></li>
+                </ul>
+            </div>
+            <!-- END code block -->
+            <div class="row">
+                <div class="col-sm">
+                    <h3>Explanation:</h3>
+                    <p>The values of the string and word are provided. Then the string is split by spaces in temp. A for loop is used to find if the word is available in temp. Each time it happens, count is incremented by 1.</p>
+                    <p>The string and the value of count i.e. number of times the word occurs in string is displayed.</p>
+                    <h3>Source:</h3>
+                    <p><a href="#" title="Website name"><i class="bi bi-link-45deg"></i> Website name</a></p>
+                </div>
+                <div class="col-sm">
+                    <h3>Output:</h3>
+                    <p>The string is: Spring is beautiful but so is winter</p>
+                    <p>The word is occurs 2 times in the above string</p>
+                </div>
+            </div>
+        </div>
+        <!-- END snippet full content -->
+        <section class="list-snippets">
+            <header class="bottom30">
+                <h2><i class="bi bi-bullseye"></i> Similar snippets</h2>
+            </header>
+            <!-- START snippets list -->
+            <div class="card-columns">
+            <article class="card"><div class="snippet"> 
+                <header>
+                    <h2><a href="#" title="Lorem ipsum">Lorem ipsum</a></h2>
+                    <p class="snippet-info">
+                        <a href="#" title="Author name">Author name</a>
+                        <span><i class="bi bi-clock-fill"></i> 01/01/2021</span>
+                    </p>
+                </header>
+                <pre>
+<code>@Data
+@Entity
+@Table(name = "Order")
+public class Order{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+    @Column(name = "STATUS")
+    private String status;
+}</code>
+                </pre>
+                <a class="btn-more" href="#" title="Read more">...</a>
+                <ul class="list-tag">
+                    <li><a class="btn-tag" href="#" title="Java">Java</a></li>
+                    <li><a class="btn-tag" href="#" title="HTML">HTML</a></li>
+                </ul>
+                <p class="user-fav"><a href="#" title="Add to favorites"><i class="bi bi-heart-fill"></i> 100</a></p>
+            </div></article>
+            <article class="card"><div class="snippet" style="border-color:brown;">
+                <header>
+                    <h2><a href="#" title="Lorem ipsum" style="color:brown;">Lorem ipsum</a></h2>
+                    <p class="snippet-info">
+                        <a href="#" title="Author name">Author name</a>
+                        <span><i class="bi bi-clock-fill"></i> 01/01/2021</span>
+                    </p>
+                </header>
+                <pre>
+<code>@Data
+@Entity
+@Table(name = "Order")
+public class Order{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+    @Column(name = "STATUS")
+    private String status;
+}</code>
+                </pre>
+                <a class="btn-more" href="#" title="Read more">...</a>
+                <ul class="list-tag">
+                    <li><a class="btn-tag" href="#" title="Java" style="background:brown;">Java</a></li>
+                    <li><a class="btn-tag" href="#" title="HTML">HTML</a></li>
+                </ul>
+                <p class="user-fav active"><a href="#" title="Delete from favorites"><i class="bi bi-heart-fill"></i> 100</a></p>
+            </div></article>
+            <article class="card"><div class="snippet">
+                <header>
+                    <h2><a href="#" title="Lorem ipsum">Lorem ipsum</a></h2>
+                    <p class="snippet-info">
+                        <a href="#" title="Author name">Author name</a>
+                        <span><i class="bi bi-clock-fill"></i> 01/01/2021</span>
+                    </p>
+                </header>
+                <pre>
+<code>@Data
+@Entity
+@Table(name = "Order")
+public class Order{
+    @Id
+    @Column(name = "ID")
+    private Long id;
+}</code>
+                </pre>
+                <a class="btn-more" href="#" title="Read more">...</a>
+                <ul class="list-tag">
+                    <li><a class="btn-tag" href="#" title="Java">Java</a></li>
+                    <li><a class="btn-tag" href="#" title="HTML">HTML</a></li>
+                </ul>
+                <p class="user-fav"><a href="#" title="Add to favorites"><i class="bi bi-heart-fill"></i> 100</a></p>
+            </div></article>
+            </div>
+            <!-- END snippets list -->
+        </section>
+    </main>
+    <footer id="main-footer">
+        <div class="container text-center"><strong>SteppinS &copy;</strong> 2021</div>
+    </footer>
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
