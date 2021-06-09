@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <header jsf:id="main-header" id="main-header">
+        <nav jsf:id="nav" id="nav" class="navbar navbar-expand-lg navbar-light"><div class="container-md">
+            <div class="container-fluid">
+                <h:outputLink class="logo" href="#" title="Home" aria-label="Logo">SteppinS</h:outputLink>
+                <h:outputLink class="visually-hidden-focusable skip-navigation hidden" href="#content">Skip to main content</h:outputLink>
+                <h:commandButton class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Main menu">
+                    <span class="navbar-toggler-icon"> </span>
+                </h:commandButton>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <h:form id="main-search" action="#" method="get"><div>
+                        <h:outputLabel for="search" class="hidden">Search</h:outputLabel>
+                        <h:inputText type="search" id="search" placeholder="search"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#626262" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </div></h:form>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><h:outputLink class="nav-link important" href="#" title="Sign in">Sign in</h:outputLink></li>
+                        <li class="nav-item"><h:outputLink class="nav-link" href="#" title="Log in">Log in</h:outputLink></li>
+                    </ul>
+                </div>
+            </div>
+        </div></nav>
+        <ui:include src="modal.xhtml"/>
+    </header>
+</ui:composition>

@@ -1,0 +1,64 @@
+<ui:composition template="/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">#{detailController.postTitle} | SteppinS</ui:define>
+    <ui:define name="main">
+        #{param.postUrl},#{detailController.postId}
+        <main jsf:id="main" id="main" class="container top40">
+            <header jsf:id="post-header" id="post-header" class="page-title">
+                <h1>#{detailController.postTitle}</h1>
+                <p class="page-info">
+                    <h:outputLink class="post-author" title="#{detailController.postAuthorId}" value="#{detailController.postAuthorId}">
+                        #{detailController.postAuthorId}
+                    </h:outputLink>
+                    <span class="post-date"><h:outputText value="#{detailController.postDate}"/></span>
+                </p>
+            </header>
+            <!-- START snippet full content -->
+            <div id="content">
+                <!-- START code block -->
+                <div class="full-code">
+                    <h2>Code</h2>
+                    <p class="user-actions">
+                        <h:outputLink href="#" title="Copy to clipboard"><i class="bi bi-clipboard"> </i></h:outputLink> <!-- When copied, change to: <span class="active"><i class="bi bi-clipboard-check"></i></span> -->
+                    </p>
+                    <pre>
+<code><h:outputText value="#{detailController.postCode}" escape="false"/></code>
+                    </pre>
+                    <ul class="list-maintags">
+                        <li><h:outputLink class="btn-tag" href="#" title="Java">Java</h:outputLink></li>
+                        <li><h:outputLink class="btn-tag" href="#" title="HTML">HTML</h:outputLink></li>
+                    </ul>
+                </div>
+                <!-- END code block -->
+                <div class="row">
+                    <div class="col-sm">
+                        <h3>Explanation:</h3>
+                        <p><h:outputText value="#{detailController.postDescription}"/></p>
+                        <h3>Source:</h3>
+                        <p><h:outputLink href="#" title="Website name">
+                            <i class="bi bi-link-45deg"> </i> <h:outputText value="#{detailController.postSource}"/>
+                        </h:outputLink></p>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Output:</h3>
+                        <p><h:outputText value="#{detailController.postOutput}"/></p>
+                    </div>
+                </div>
+            </div>
+            <!-- END snippet full content -->
+            <section jsf:id="list-snippets" id="list-snippets" class="list-snippets">
+            <header jsf:id="list-snippets-header" id="list-snippets-header" class="bottom30">
+                <h2><i class="bi bi-bullseye"> </i> Similar snippets</h2>
+            </header>
+            <!-- START snippets list -->
+            <ui:include src="/template/post-list.xhtml"/>
+            <!-- END snippets list -->
+            </section>
+        </main>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,41 @@
+<?xml vers<ui:composition template="/template/layout.xhtml"
+                          xmlns="http://www.w3.org/1999/xhtml"
+                          xmlns:jsf="http://xmlns.jcp.org/jsf"
+                          xmlns:f="http://xmlns.jcp.org/jsf/core"
+                          xmlns:h="http://xmlns.jcp.org/jsf/html"
+                          xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                          xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">SteppinS</ui:define>
+    <ui:define name="main">
+        <h:form>
+            <div class="form-group">
+                <h:outputLabel for="postTitle" value="Snippet title"/>
+                <h:inputText type="text" id="postTitle" class="form-control" value="#{postController.postTitle}"/>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="postCode" value="Code"/>
+                <h:inputTextarea id="postCode" class="form-control" value="#{postController.postCode}"/>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="postOutput" value="Output of the code"/>
+                <h:inputTextarea id="postOutput" class="form-control" value="#{postController.postOutput}"/>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="postDescription" value="Explaination"/>
+                <h:inputTextarea id="postDescription" class="form-control" value="#{postController.postDescription}"/>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="postSource" value="Source"/>
+                <h:inputText type="url" id="postSource" class="form-control" value="#{postController.postSource}"/>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="postKeyword" value="Keywords"/>
+                <p:autoComplete id="postKeyword" multiple="true" value="#{postController.selectedKeywords}"
+                                completeMethod="#{postController.completeKeyword}"
+                                var="keyword" itemLabel="#{keyword.keywordName}" itemValue="#{keyword}"
+                                converter="keywordConver" forceSelection="true" scrollHeight="250">
+                </p:autoComplete>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

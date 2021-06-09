@@ -1,0 +1,96 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <!-- START signin popup -->
+    <div class="modal fade" id="signModal" tabindex="-1" role="dialog" aria-labelledby="signModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h:commandButton type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </h:commandButton>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Create an account</h4>
+                        <h5>Already have an account? <h:outputLink href="#" title="Sign in" data-toggle="modal" data-target="#logModal">Log in</h:outputLink></h5>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h:form action="#" method="post">
+                            <div class="form-group">
+                                <h:outputLabel for="username">Username</h:outputLabel>
+                                <h:inputText type="text" class="form-control" id="username" placeholder="Thor, Rocky, Alan Turing..." required="true"/>
+                                <div class="invalid-feedback">
+                                    This username is already taken. Please choose another one.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="email1">E-mail</h:outputLabel>
+                                <h:inputText type="email" class="form-control" id="email1" placeholder="werock@email.com" required="true"/>
+                                <div class="invalid-feedback">
+                                    Invalid e-mail. Please enter a valid email.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="password1">Password</h:outputLabel>
+                                <h:inputText type="password" class="form-control" id="password1" placeholder="Your password" required="true"/>
+                                <div class="invalid-feedback">
+                                    The password should have at least 6 characters. Use numbers, lowercase letters and uppercase letters.
+                                </div>
+                            </div>
+                            <h:commandButton type="button" class="btn btn-info btn-block btn-round">Sign in</h:commandButton>
+                        </h:form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <div class="signup-section">
+                            <h:inputText type="checkbox" class="form-check-input" id="termsCheck" value="" required="true"/>
+                            <h:outputLabel class="form-check-label" for="termsCheck">I have read and agree to the <h:outputLink href="#" title="Terms of Service">Terms of Service</h:outputLink>.</h:outputLabel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END signin popup -->
+    <!-- START login popup -->
+    <div class="modal fade" id="logModal" tabindex="-2" role="dialog" aria-labelledby="logModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h:commandButton type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </h:commandButton>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Log in</h4>
+                        <h5>You still do not have an account? <h:outputLink href="#" title="Sign in" data-toggle="modal" data-target="#signModal">Sign in</h:outputLink></h5>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h:form action="#" method="post">
+                            <div class="form-group">
+                                <h:outputLabel for="email2">E-mail</h:outputLabel>
+                                <h:inputText type="email" class="form-control" id="email2" placeholder="werock@email.com" required="true"/>
+                                <div class="invalid-feedback">
+                                    Invalid e-mail. Please enter a valid email.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="password2">Password</h:outputLabel>
+                                <h:inputText type="password" class="form-control" id="password2" placeholder="Your password" required="true"/>
+                                <div class="invalid-feedback">
+                                    The password should have at least 6 characters. Use numbers, lowercase letters and uppercase letters.
+                                </div>
+                                <h:outputLink class="pwd-link" href="#" title="Forgotten password">Forgot your password?</h:outputLink>
+                            </div>
+                            <h:commandButton type="button" class="btn btn-info btn-block btn-round">Log in</h:commandButton>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END signin popup -->
+</ui:composition>

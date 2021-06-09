@@ -1,0 +1,31 @@
+<ui:composition template="/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="title">SteppinS | Results for #{searchResults.value}</ui:define>
+    <ui:define name="main">
+    <main jsf:id="main" id="main" class="container top40">
+        <header jsf:id="page-main-header" id="page-main-header" class="page-title">
+            <h1>Results for <span>#{searchResults.value}</span></h1>
+            <p class="page-info">We have found <strong>#{searchResults.numResults}</strong> snippets.</p>
+        </header>
+        <div class="dropdown list-sorting">
+            <h:button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Most popular
+            </h:button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <h:outputLink class="dropdown-item" href="#" value="Most popular"/>
+                <h:outputLink class="dropdown-item" href="#" value="Publication date"/>
+                <h:outputLink class="dropdown-item" href="#" value="Alphabetically"/>
+            </div>
+        </div>
+        <!-- START snippets list -->
+        <div id="content" class="list-snippets">
+            <ui:include src="/template/post-list.xhtml"></ui:include>
+        </div>
+        <!-- END snippets list -->
+    </main>
+    </ui:define>
+</ui:composition>

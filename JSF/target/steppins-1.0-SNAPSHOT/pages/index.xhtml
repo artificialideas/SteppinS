@@ -1,0 +1,81 @@
+<ui:composition template="/template/layout.xhtml"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <!-- Replace HEADER.xhtml template only for homepage -->
+    <ui:define name="header">
+        <header jsf:id="main-header" id="main-header">
+            <nav jsf:id="nav" id="nav" class="navbar navbar-expand-lg navbar-light"><div class="container-md">
+                <div class="container-fluid">
+                    <h:outputLink class="logo" href="#" title="Home" aria-label="Logo">SteppinS</h:outputLink>
+                    <h:outputLink class="visually-hidden-focusable skip-navigation hidden" href="#content">Skip to main content</h:outputLink>
+                    <h:commandButton class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Main menu">
+                        <span class="navbar-toggler-icon"> </span>
+                    </h:commandButton>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><h:outputLink class="nav-link important" href="#" title="Sign in">Sign in</h:outputLink></li>
+                            <li class="nav-item"><h:outputLink class="nav-link" href="#" title="Log in">Log in</h:outputLink></li>
+                        </ul>
+                    </div>
+                </div>
+            </div></nav>
+            <ui:include src="/template/modal.xhtml"/>
+        </header>
+        <!-- START big search -->
+        <h:form id="main-search" action="#" method="get"><div>
+            <h:outputLabel for="search" class="hidden">Search</h:outputLabel>
+            <h:inputText type="search" id="search" placeholder="search"/>
+            <!--<h:graphicImage library="img" url="search-svg.svg" alt="" class="bi bi-search"/>-->
+        </div></h:form>
+        <!-- END big search -->
+    </ui:define>
+
+    <ui:define name="main">
+        <main jsf:id="main" id="main" class="container">
+            <header jsf:id="page-main-header" id="page-main-header" class="page-title text-center">
+                <h1>Code snippets for developers</h1>
+                <h2>Search / save / post. The best snippets up-to-date.</h2>
+            </header>
+            <ul class="list-maintags text-center">
+                <li><h:outputLink class="btn-tag active" href="#" title="All">All</h:outputLink></li>
+                <li><h:outputLink class="btn-tag" href="#" title="Java">Java</h:outputLink></li>
+            </ul>
+            <div class="dropdown list-sorting">
+                <h:commandButton class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Most popular
+                </h:commandButton>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <h:outputLink class="dropdown-item" href="#" value="Most popular"/>
+                    <h:outputLink class="dropdown-item" href="#" value="Publication date"/>
+                    <h:outputLink class="dropdown-item" href="#" value="Alphabetically"/>
+                </div>
+            </div>
+            <!-- START snippets list -->
+            <div id="content" class="list-snippets">
+                <!--<h:selectOneMenu id="author" class="form-control" value="#{postController.selectedAuthor}">
+                    <f:selectItems value="#{postController.authorList}" var="author"
+                                   itemValue="#{author}"
+                                   itemLabel="#{author.authorName}"/>
+                    <f:converter converterId="authorConver"/>
+                </h:selectOneMenu>
+                <h:selectOneMenu id="post" class="form-control" value="#{postController.selectedPost}">
+                    <f:selectItems value="#{postController.postList}" var="post"
+                                   itemValue="#{post}"
+                                   itemLabel="#{post.postTitle}"/>
+                    <f:converter converterId="postConver"/>
+                </h:selectOneMenu>
+                <h:selectOneMenu id="keyword" class="form-control" value="#{postController.selectedKeywords}">
+                    <f:selectItems value="#{postController.keywordList}" var="keyword"
+                                   itemValue="#{keyword}"
+                                   itemLabel="#{keyword.keywordName}"/>
+                    <f:converter converterId="keywordConver"/>
+                </h:selectOneMenu>-->
+                <ui:include src="/template/post-list.xhtml"/>
+            </div>
+            <!-- END snippets list -->
+        </main>
+    </ui:define>
+</ui:composition>
